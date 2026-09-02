@@ -65,6 +65,35 @@
     - SpearTelescopic
 
 - type: loadout
+  id: SecurityOfficerMk58
+  dummyEntity: WeaponPistolMk58
+  equipment:
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - MagazinePistol
+    - MagazinePistol
+- type: loadout
+  id: SecurityMk32
+  dummyEntity: WeaponPistolMk32
+  equipment:
+    pocket1: WeaponPistolMk32
+  storage:
+    back:
+    - MagazinePistol
+    - MagazinePistol
+    - MagazinePistol
+- type: loadout
+  id: SecurityNs195
+  dummyEntity: WeaponPistolNs195
+  equipment:
+    pocket1: WeaponPistolNs195
+  storage:
+    back:
+    - MagazinePistol
+    - MagazinePistol
+    
+- type: loadout
   id: SecurityOfficerEnvirosuit
   equipment:
     jumpsuit: ClothingUniformEnvirosuitSec
