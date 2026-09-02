@@ -1,78 +1,114 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
+# For mantles
+- type: loadoutEffectGroup
+  id: MasterHoS
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 20h
 
-- type: job
-  id: HeadOfSecurity
-  name: job-name-hos
-  description: job-description-hos
-  playTimeTracker: JobHeadOfSecurity
-  requirements:
-    - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 5h # Goobstation
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 1h # knowing how to use the tools is important
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 10h # Goobstation
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10h
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
-  weight: 10
-  startingGear: HoSGear
-  icon: "JobIconHeadOfSecurity"
-  supervisors: job-supervisors-captain
-  canBeAntag: false
-  guides: # goobstation
-  - Security
-  - SpaceLaw
-  - LegalSOP
-  - Command
-  - HeadOfSecuritySOP
-  - SecuritySOP
-  - AlertLevels
-  goobcoins: 45 #Goob content
-  access:
-  - HeadOfSecurity
-  - Command
-  - Brig
-  - Security
-  - Armory
-  - Maintenance
-  - External
-  - Detective
-  - Cryogenics
-  - GenpopEnter
-  - GenpopLeave
-  special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
-      - type: CommandStaff
-      - type: SecurityStaff # goobstation
+# Goobstation - For Ensembles
+- type: loadoutEffectGroup
+  id: GrandMasterHoS
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 360000 # 100 hrs
+
+# Jumpsuit
+- type: loadout
+  id: HeadofSecurityJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+  groupBy: "jumpsuit"
+
+
+- type: loadout
+  id: HeadofSecurityJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoS
+  groupBy: "jumpskirt"
+
+
+- type: loadout
+  id: HeadofSecurityTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+  groupBy: "jumpsuit"
+
+
+- type: loadout
+  id: HeadofSecurityTurtleneckSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSAlt
+  groupBy: "jumpskirt"
+
+
+- type: loadout
+  id: HeadofSecurityFormalSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHosFormal
+  groupBy: "jumpsuit"
+
+
+- type: loadout
+  id: HeadofSecurityFormalSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHosFormal
+  groupBy: "jumpskirt"
+
+
+# Head
+- type: loadout
+  id: HeadofSecurityHead
+  equipment:
+    head: ClothingHeadHatHoshat
+
+
+- type: loadout
+  id: HeadofSecurityBeret
+  equipment:
+    head: ClothingHeadHatBeretHoS
+
+
+# Neck
+- type: loadout
+  id: HeadofSecurityCloak
+  equipment:
+    neck: ClothingNeckCloakHos
+
+- type: loadout
+  id: HeadofSecurityMantle
+  equipment:
+    neck: ClothingNeckMantleHOS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterHoS
 
 - type: startingGear
-  id: HoSGear
+  id: HeadofSecurityMantle
   equipment:
-    eyes: ClothingEyesGlassesSecurity
-    id: HoSPDA
-    #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
-    ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
-  storage:
-    back:
-    - Flash
-    - MagazinePistol
+    neck: ClothingNeckMantleHOS
 
-- type: chameleonOutfit
-  id: HeadOfSecurityChameleonOutfit
-  job: HeadOfSecurity
-  hasMindShield: true
+- type: loadout # Goobstation - Ensembles
+  id: HeadOfSecurityEnsemble
   equipment:
-    mask: ClothingMaskGasSecurity
-    neck: ClothingNeckCloakHos
+    neck: ClothingNeckEnsembleHeadOfSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GrandMasterHoS
+
+# OuterClothing
+- type: loadout
+  id: HeadofSecurityCoat
+  equipment:
+    outerClothing: ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: HeadofSecurityWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterHoS
