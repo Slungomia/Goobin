@@ -155,3 +155,85 @@
         whitelist:
           tags:
           - CartridgeMagnum
+- type: entity
+  name: NS195
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  id: WeaponPistolNs195
+  description: A sleek firearm built on the .35 body that traded firerate for projectile speed with its barrel. Helped pioneer the standard MK58 much later. Takes .35 Auto pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Ns195.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Ns195.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 65
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+- type: entity
+  name: MK32
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  id: WeaponPistolMk32
+  description: The older brother of MK58 built on the .35 body having higher magazine size while cutting the barrel leading to inacuracy. Later pioneered the standard MK58. Takes any .35 Auto pistol magazine.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Mk32.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Mk32.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    minAngle: 5
+    maxAngle: 20
+    angleIncrease: 7
+    angleDecay: 4
+    fireRate: 4
+    availableModes:
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHighCapacity
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: StealTarget
+    stealGroup: OfficerHandgun
