@@ -380,6 +380,16 @@
 # Security Officer
 
 - type: loadoutGroup
+  id: SecuritySidearm
+  name: loadout-group-security-pistol
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityMk58
+  - SecurityMk32
+  - SecurityNs195
+  
+- type: loadoutGroup
   id: SecurityOfficerEnvirohelm
   name: loadout-group-security-officer-envirohelm
   minLimit: 1
@@ -469,6 +479,16 @@
 
 # Warden
 
+- type: loadoutGroup
+  id: SecuritySidearm
+  name: loadout-group-security-pistol
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityMk58
+  - SecurityMk32
+  - SecurityNs195
+  
 - type: loadoutGroup
   id: WardenEnvirohelm
   name: loadout-group-warden-envirohelm
