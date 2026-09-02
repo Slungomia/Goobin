@@ -74,7 +74,6 @@ loadout-group-chief-engineer-envirosuit = Chief Engineer envirosuit
 loadout-group-chief-engineer-envirogloves = Chief Engineer envirogloves
 
 # Security Officer
-loadout-group-security-pistol = Duty Sidearm
 loadout-group-security-officer-envirohelm = Security Officer envirohelm
 loadout-group-security-officer-envirosuit = Security Officer envirosuit
 loadout-group-security-officer-envirogloves = Security Officer envirogloves
