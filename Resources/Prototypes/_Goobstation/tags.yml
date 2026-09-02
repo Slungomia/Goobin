@@ -644,6 +644,12 @@
 - type: Tag
   id: WizardHat
 
+- type: Tag
+  id: WeaponPistolNs195
+  
+- type: Tag
+  id: WeaponPistolMk32
+  
 # XENOBIO - START
 
 - type: Tag
